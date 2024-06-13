@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
+import About from "./About";
+import Footer from "./Footer";
+import Header from "./Header";
+import Home from "./Home";
+import Missing from "./Missing";
+import Nav from "./Nav";
+import NewPost from "./NewPost";
+import PostPage from "./PostPage";
+import { useState } from "react";
+
 
 function App() {
+  const [posts,setPosts]=useState([
+    {
+      id:1,
+      title:"my first post",
+      datetime:"hjhcfc",
+      body:"hello i completed my project today"
+    },
+    {
+      id:2,
+      title:"my first post",
+      datetime:"hjhcfc",
+      body:"hello i completed my project today"
+    },
+    {
+      id:3,
+      title:"my first post",
+      datetime:"hjhcfc",
+      body:"hello i completed my project today"
+    },
+    {
+      id:4,
+      title:"my first post",
+      datetime:"hjhcfc",
+      body:"hello i completed my project today"
+    }
+  ])
+  const [search,setSearch]=useState('')
+  const [searchResults,setSearchResults]=useState([])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  
+      <Header title={"social-media-app"} />
+      <Nav search={search} setSearch={setSearch}/>
+      <Home posts={posts}/>
+      <NewPost/>
+      <PostPage/>
+      <About/>
+      <Missing/>
+      <Footer/>
     </div>
   );
 }
