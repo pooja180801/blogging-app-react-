@@ -12,6 +12,9 @@ body {
   padding: 20px;
   text-align: center;
   margin-bottom: 20px;
+  position: fixed;
+  width: 100%;
+  top: 0%;
 }
 
 .header h1 {
@@ -20,11 +23,13 @@ body {
 }
 
 nav {
+  background-color: rebeccapurple;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: #4CAF50;
   padding: 10px 20px;
+  margin-top: 90px
 }
 
 .search-form {
@@ -102,6 +107,9 @@ a, a:visited, a:hover, a:focus, a:active {
   font-size: 1rem;
   margin-top: 10px;
 }
+.Home{
+  margin-bottom: 120px;
+}
 
 .post-body {
   background-color: #fdfdfd;
@@ -111,6 +119,7 @@ a, a:visited, a:hover, a:focus, a:active {
   border: 1px solid #ddd;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 120px;
 }
 
 .new-post-form {
@@ -187,6 +196,7 @@ a, a:visited, a:hover, a:focus, a:active {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 600px;
+  margin-bottom: 120px;
 }
 
 .about h2 {
@@ -202,11 +212,19 @@ a, a:visited, a:hover, a:focus, a:active {
   margin-bottom: 5px;
 }
 
+.main-content {
+  padding-top: 120px; 
+  padding-bottom: 120px; 
+  overflow-y: auto;
+}
+
 .footer {
   background-color: #333;
   color: #fff;
   padding: 20px 0;
   text-align: center;
+  bottom: 0%;
+  position: fixed;width: 100%;
 }
 
 .footer .footer-content {
@@ -249,7 +267,7 @@ a, a:visited, a:hover, a:focus, a:active {
 
 
 
-.postPage button {
+.postPage .delete {
   display: inline-block;
   background-color: #e74c3c;
   color: #fff;
@@ -260,6 +278,21 @@ a, a:visited, a:hover, a:focus, a:active {
   font-size: 1rem;
 }
 
-.postPage button:hover{
+.postPage .delete:hover{
   background-color: #c0392b;
+}
+
+.postPage .edit {
+  display: inline-block;
+  background-color: rgb(95, 226, 95);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.postPage .edit:hover{
+  background-color: #0a9f2a;
 }
