@@ -65,7 +65,14 @@ function App() {
     setPostBody('')
     navigate('/')
   }
+  
 
+  const handleDelete=(id)=>{
+    const postsList=posts.filter(post=>post.id!==id);
+    setPosts(postsList)
+    navigate('/')
+
+  }
 
   return (
     <div className="App">
@@ -73,7 +80,7 @@ function App() {
   <Nav search={search} setSearch={setSearch}/>
   <Routes>
       <Route path="/" element={<Home posts={searchResults}/>}/>
-      <Route path="post" />
+      <Route path="post" >
       <Route index element={ <NewPost 
       handleSubmit={handleSubmit} 
       postBody={postBody} 
@@ -81,11 +88,10 @@ function App() {
       postTitle={postTitle} 
       setPostTitle={setPostTitle}/>}
       />
-      <Route path="id" element={<PostPage />}/>
-
+      <Route path=":id" element={<PostPage posts={posts} handleDelete={handleDelete}/> }/>
+      </Route>
       <Route path="about" element={<About/>}/>
       <Route path="*" element={<Missing/>}/>
-      {/* <PostPage/>   */}
       </Routes>
       <Footer/>
     </div>
