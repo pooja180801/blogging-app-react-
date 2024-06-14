@@ -66,6 +66,17 @@ nav ul li a:hover {
   background-color: #45a049;
 }
 
+a, a:visited, a:hover, a:focus, a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.post-link {
+  color: inherit; 
+  text-decoration: none; 
+  display: block; 
+}
+
 .post {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -73,15 +84,18 @@ nav ul li a:hover {
   margin: 20px;
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
 }
 
 .post h2 {
   margin-top: 0;
+  text-decoration: none;
 }
 
 .postDate {
   color: #888;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
 .postBody {
@@ -212,4 +226,40 @@ nav ul li a:hover {
 
 .footer p:last-child {
   margin-bottom: 0;
+}
+
+.postPage {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.postPage .post {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 20px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.postPage button {
+  display: inline-block;
+  background-color: #e74c3c;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.postPage button:hover{
+  background-color: #c0392b;
 }
