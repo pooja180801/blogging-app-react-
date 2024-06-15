@@ -13,6 +13,7 @@ import api from './api/posts';
 import EditPost from "./EditPost";
 
 
+
 function App() {
   const navigate=useNavigate();
   const [posts,setPosts]=useState([])
@@ -93,7 +94,7 @@ function App() {
     const datetime=format(new Date(), 'MMM dd, yyyy pp');
     const updatedPost={id,title:editTitle,datetime,body:editBody}
     try {
-      const response=await api.put('/posts/${id}',updatedPost)
+      const response=await api.put(`/posts/${id}`,updatedPost)
       setPosts(posts.map(post=>post.id===id ? {...response.data} : post))
       setEditTitle('')
       setEditBody('')
