@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Link } from 'react-router-dom';
+import DataContext from './context/DataContext';
 
-const EditPost = ({posts,handleEdit,editBody,editTitle,setEditBody,setEditTitle}) => {
+const EditPost = () => {
     const {id}=useParams();
     const post=posts.find(post=>(post.id).toString()===id);
+    const {posts,handleEdit,editBody,editTitle,setEditBody,setEditTitle}=useContext(DataContext)
 
     useEffect(()=>{
         if(post){
@@ -16,7 +18,7 @@ const EditPost = ({posts,handleEdit,editBody,editTitle,setEditBody,setEditTitle}
 
   return (
     <main className='post-body'>
-        {editTitle && 
+        {post && 
         <>
         <h2>Edit Post</h2>
         <form className='new-post-form' onSubmit={(e)=>e.preventDefault()}>
@@ -41,7 +43,7 @@ const EditPost = ({posts,handleEdit,editBody,editTitle,setEditBody,setEditTitle}
         </>
         }
 
-     {!editTitle &&
+     {!post &&
       <main className='missing'>
       <h2>Page not found</h2>
       <p>Well,that's disappointing</p>
