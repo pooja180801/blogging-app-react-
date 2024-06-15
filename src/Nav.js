@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
+import DataContext from './context/DataContext'
 
-const Nav = ({search,setSearch}) => {
+const Nav = ({}) => {
+  const {search,setSearch}=useContext(DataContext)
   return (
-    <nav>
+    <div className='nav'>
       <form className='search-form' onSubmit={(e)=>e.preventDefault()}>
         <label htmlFor="search">Search Posts</label>
         <input type="text"
@@ -19,7 +21,7 @@ const Nav = ({search,setSearch}) => {
         <li><Link to='post'>Post</Link></li>
         <li><Link to='about'>About</Link></li>
       </ul>
-    </nav>
+    </div>
   )
 }
 
